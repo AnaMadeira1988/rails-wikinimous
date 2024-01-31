@@ -1,0 +1,16 @@
+<div class="displayarticle">
+  <div class="articleshow">
+    <h1><%= @article.title %></h1>
+    <div class="icons">
+      <%= link_to(edit_article_path) do %>
+        <i class="fas fa-pencil-alt"></i>
+      <% end %>
+      <%= link_to article_path(@article), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <h3><%= @article.content %></h3>
+  <%= link_to("Go Back to Articles Index", articles_path) %>
+</div>
